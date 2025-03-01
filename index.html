@@ -19,13 +19,13 @@
         <div class="mb-3 text-start">
             <select id="teamSelect" class="form-select">
                 <option value="" selected disabled>กรุณาเลือกทีม</option>
-                <option value="ราชบุรี">ราชบุรี</option>
-                <option value="กรุงเทพฯ">กรุงเทพฯ</option>
-                <option value="ขอนแก่น">ขอนแก่น</option>
+                <option value="ราชบุรี">ทดสอบระบบ 1</option>   <!-- ราชบุรี -->
+                <option value="กรุงเทพฯ">ทดสอบระบบ 2</option>   <!-- กรุงเทพฯ -->
+              <!--  <option value="ขอนแก่น">ขอนแก่น</option>
                 <option value="นครราชสีมา">นครราชสีมา</option>
                 <option value="ชลบุรี">ชลบุรี</option>
                 <option value="ระยอง">ระยอง</option>
-                <option value="สิงห์บุรี">สิงห์บุรี</option>
+                <option value="สิงห์บุรี">สิงห์บุรี</option> -->
             </select>
         </div>
         <button type="submit" class="btn btn-custom w-100">เข้าสู่ระบบ</button>
@@ -38,13 +38,13 @@
         event.preventDefault();
         var team = document.getElementById("teamSelect").value;
         var urls = {
-            "ราชบุรี": "https://www.appsheet.com/start/029a2fcd-cbb0-4520-aa17-781e2132cae0",
-            "กรุงเทพฯ": "https://www.appsheet.com/start/c879cf05-4150-4dd1-ab74-e27bbb66131a",
-            "ขอนแก่น": "https://www.appsheet.com/start/514aca42-8c44-4fa7-8a0b-c5afe4a78627",
+            "ทดสอบระบบ 1": "https://www.appsheet.com/start/bfa64321-3d01-4af9-b2ee-8d6f6bb1c5d1",   // ราชบุรี
+            "ทดสอบระบบ 2": "https://www.appsheet.com/start/1d23e261-2290-496f-aa2f-f4c464caf25f",  // กรุงเทพฯ
+           /* "ขอนแก่น": "https://www.appsheet.com/start/514aca42-8c44-4fa7-8a0b-c5afe4a78627",
             "นครราชสีมา": "https://www.appsheet.com/start/fbe8017d-b4f5-4a32-afd2-cb71b8f328b0",
             "ชลบุรี": "https://www.appsheet.com/start/0f98254e-bf22-494e-922e-f1e19039d2bf",
             "ระยอง": "https://www.appsheet.com/start/21acff9c-a445-49dd-abab-ba1db208c6d8",
-            "สิงห์บุรี": "https://www.appsheet.com/start/7dc54d12-c890-4158-98d4-3aaec71f99f2"
+            "สิงห์บุรี": "https://www.appsheet.com/start/7dc54d12-c890-4158-98d4-3aaec71f99f2" */
         };
 
         if (team && urls[team]) {
