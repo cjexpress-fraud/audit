@@ -30,7 +30,7 @@ img {
 }
 
 h3 {
-    font-size: 18px; 
+    font-size: 16px; 
     margin-bottom: 20px; /* เพิ่มระยะห่างหัวข้อ */
     color: rgb(39, 37, 37);
 }
@@ -67,4 +67,5 @@ p {
     margin-top: 20px; /* เพิ่มระยะห่าง version */
     font-size: 10px;
 }
+
 
