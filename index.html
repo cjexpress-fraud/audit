@@ -6,8 +6,7 @@
     <title>Fraud Audit</title>
     <link rel="icon" type="image/jpg" sizes="16x16" href="CJlogo.jpg"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet"> <!-- เพิ่มฟอนต์ Kanit -->
-    <!-- เชื่อมโยงไฟล์ CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,16 +16,7 @@
     <h3>Fraud Audit</h3>
     <form onsubmit="redirectToApp(event)">
         <div class="mb-3 text-start">
-            <select id="teamSelect" class="form-select">
-                <option value="" selected disabled>กรุณาเลือกทีม</option>
-                <option value="ทดสอบระบบ 1">ทดสอบระบบ 1</option>   <!-- ราชบุรี -->
-                <option value="ทดสอบระบบ 2">ทดสอบระบบ 2</option>   <!-- กรุงเทพฯ -->
-              <!--  <option value="ขอนแก่น">ขอนแก่น</option>
-                <option value="นครราชสีมา">นครราชสีมา</option>
-                <option value="ชลบุรี">ชลบุรี</option>
-                <option value="ระยอง">ระยอง</option>
-                <option value="สิงห์บุรี">สิงห์บุรี</option> -->
-            </select>
+            <input type="text" id="usernameInput" class="form-control" placeholder="กรอกชื่อผู้ใช้งาน (เช่น: nattawut.pooc)" required>
         </div>
         <button type="submit" class="btn btn-custom w-100">เข้าสู่ระบบ</button>
     </form>
@@ -36,21 +26,37 @@
 <script>
     function redirectToApp(event) {
         event.preventDefault();
-        var team = document.getElementById("teamSelect").value;
-        var urls = {
-            "ทดสอบระบบ 1": "https://www.appsheet.com/start/bfa64321-3d01-4af9-b2ee-8d6f6bb1c5d1",   // ราชบุรี
-            "ทดสอบระบบ 2": "https://www.appsheet.com/start/ad158e9d-814d-40ed-93b7-4e8e3ec43de8",  // กรุงเทพฯ
-           /* "ขอนแก่น": "https://www.appsheet.com/start/514aca42-8c44-4fa7-8a0b-c5afe4a78627",
-            "นครราชสีมา": "https://www.appsheet.com/start/fbe8017d-b4f5-4a32-afd2-cb71b8f328b0",
-            "ชลบุรี": "https://www.appsheet.com/start/0f98254e-bf22-494e-922e-f1e19039d2bf",
-            "ระยอง": "https://www.appsheet.com/start/21acff9c-a445-49dd-abab-ba1db208c6d8",
-            "สิงห์บุรี": "https://www.appsheet.com/start/7dc54d12-c890-4158-98d4-3aaec71f99f2" */
-        };
+        var username = document.getElementById("usernameInput").value.trim().toLowerCase();
 
-        if (team && urls[team]) {
-            window.location.href = urls[team];
+        const groupA = [
+            "narumol.th", "kanworapat.ket", "patipat.tho", "jeeranan.mai",
+            "kittimet.wan", "nattawut.pooc", "piyawat.uen", "songsak.unr",
+            "thanyakarn.pha", "woradornkajoneyot.sr"
+        ];
+
+        const groupB = [
+            "apinan.sri", "songkran.son", "thinnaphat.sum", "wassamon.sri",
+            "chutinan.och", "manot.bum", "nuwee.ph", "tirawat.pra"
+        ];
+
+        const groupC = [
+            "kriengkrai.ayu", "sasiwaroon.ken"
+        ];
+
+        let redirectUrl = "";
+
+        if (groupA.includes(username)) {
+            redirectUrl = "https://www.appsheet.com/start/2fdefe69-76e4-4f36-8bac-bf1b9d370998";
+        } else if (groupB.includes(username)) {
+            redirectUrl = "https://www.appsheet.com/start/84bc0e9a-1758-4061-bb80-95d4fd78efb1";
+        } else if (groupC.includes(username)) {
+            redirectUrl = "https://www.appsheet.com/start/ee301e4a-b719-4c98-b2a6-27c55003301a";
+        }
+
+        if (redirectUrl) {
+            window.location.href = redirectUrl;
         } else {
-            alert("กรุณาเลือกทีมก่อนเข้าสู่ระบบ");
+            alert("ไม่พบชื่อผู้ใช้งาน กรุณาตรวจสอบอีกครั้ง");
         }
     }
 </script>
